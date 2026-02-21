@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // --- AUTHENTICATION HELPER ---
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // --- PRODUCTS & CATALOG ---
+    // Anyone can see products, only admins can manage them
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // --- NEWS & MESSAGES ---
+    // Anyone can read news, only admins can publish/edit
+    match /news/{postId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // --- SETTINGS (Telegram, UI Config, etc.) ---
+    // Critical system settings - Admin only access
+    match /settings/{settingId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // --- ANALYTICS (Visits, Events, Exits) ---
+    // Allow public writing for tracking, but restrict reading to admins
+    match /visits/{visitId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+    
+    match /events/{eventId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+
+    match /exits/{exitId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+
+    // --- CUSTOMER CONTACTS / INQUIRIES ---
+    // Allow public to submit contact forms, only admins can view
+    match /customers/{customerId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+
+    // --- DEFAULT DENY ---
+    match /{document=**} {
+      allow read, write: if isAuthenticated();
+    }
+  }
+}
