@@ -94,7 +94,8 @@ const Catalog = () => {
 
                 .product-card-image {
                     width: 100%;
-                    background: rgba(255,255,255,0.03);
+                    height: 250px;
+                    background: rgba(255, 255, 255, 0.05);
                     border-radius: 16px;
                     margin-bottom: 1.5rem;
                     display: flex;
@@ -102,19 +103,20 @@ const Catalog = () => {
                     justify-content: center;
                     overflow: hidden;
                     position: relative;
-                    height: 250px; /* Fixed height for better mobile stability */
                 }
 
-                @media (min-width: 641px) {
+                @media (max-width: 640px) {
                     .product-card-image {
-                        height: auto;
-                        aspect-ratio: 1/1;
+                        height: 220px;
                     }
                 }
 
                 .product-card-image img {
+                    display: block;
                     max-width: 90%;
                     max-height: 90%;
+                    width: auto;
+                    height: auto;
                     object-fit: contain;
                     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
                 }
@@ -213,15 +215,16 @@ const Catalog = () => {
                                 <motion.div
                                     key={product.id}
                                     initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: idx * 0.05 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: idx * 0.05, duration: 0.5 }}
                                 >
-                                    <Link to={`/product/${product.id}`} className="product-card">
+                                    <Link to={`/product/${product.id}`} className="product-card" style={{ display: 'flex' }}>
                                         <div className="product-card-image">
                                             <img
-                                                src={product.imageUrl || 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400'}
+                                                src={product.imageUrl && product.imageUrl.trim() !== '' ? product.imageUrl : 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=400'}
                                                 alt={product.name}
+                                                loading="eager"
+                                                style={{ display: 'block', position: 'relative', zIndex: 10 }}
                                             />
                                         </div>
                                         <div className="product-card-info">
