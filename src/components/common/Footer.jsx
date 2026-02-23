@@ -33,11 +33,11 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="footer-brand-section">
                         <Link to="/" className="brand-link" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem', textDecoration: 'none', color: 'var(--color-text)' }}>
-                            <img src={logoImg} alt="Tabor Solar" style={{ height: '35px' }} />
-                            <span style={{ fontSize: '1.1rem', fontWeight: '800', fontFamily: 'var(--font-heading)', textTransform: 'uppercase' }}>TABOR</span>
+                            <img src={logoImg} alt="Z-Tabor Solar" style={{ height: '35px' }} />
+                            <span style={{ fontSize: '1.1rem', fontWeight: '800', fontFamily: 'var(--font-heading)', textTransform: 'uppercase' }}>Z-TABOR</span>
                         </Link>
                         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                            Leading the way in renewable energy, construction materials, and global agricultural trade in Ethiopia.
+                            Advanced solar technology and sustainable energy solutions for home, business, and industry. Powering Ethiopia's future.
                         </p>
                         <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
                             {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn].map((Icon, i) => (

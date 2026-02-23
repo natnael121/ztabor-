@@ -26,7 +26,7 @@ const Catalog = () => {
     return (
         <div className="page-catalog" style={{ backgroundColor: 'var(--color-bg)', minHeight: '100vh', color: 'var(--color-text)' }}>
             <SEO
-                title="Product Catalog - Tabor Solar"
+                title="Product Catalog - Z-Tabor Solar"
                 description="Explore our complete catalog of high-efficiency solar energy products for every need."
             />
 

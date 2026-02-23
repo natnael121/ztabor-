@@ -66,8 +66,8 @@ const Blog = () => {
     return (
         <div className="news-page-wrapper">
             <SEO
-                title="News & Updates - Tabor Solar"
-                description="Latest stories, product announcements, and industry insights from Tabor Solar."
+                title="News & Updates - Z-Tabor Solar"
+                description="Latest stories, product announcements, and industry insights from Z-Tabor Solar."
             />
 
             <style>{`

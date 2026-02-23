@@ -78,7 +78,7 @@ const ProductDetail = () => {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="premium-product-page"
         >
-            <SEO title={`${product.name} - Tabor Solar`} description={product.description} image={product.imageUrl} />
+            <SEO title={`${product.name} - Z-Tabor Solar`} description={product.description} image={product.imageUrl} />
 
             <style>{`
                 .premium-product-page {

@@ -79,8 +79,8 @@ const Header = ({ theme, toggleTheme }) => {
             `}</style>
 
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', color: 'var(--color-text)' }}>
-                <img src={logoImg} alt="Tabor Solar" style={{ height: '45px', objectFit: 'contain', filter: theme === 'light' ? 'none' : 'invert(0)' }} />
-                <span style={{ fontSize: '1.5rem', fontWeight: '900', letterSpacing: '0.15em', fontFamily: 'var(--font-heading)', textTransform: 'uppercase' }}>TABOR</span>
+                <img src={logoImg} alt="Z-Tabor Solar" style={{ height: '45px', objectFit: 'contain', filter: theme === 'light' ? 'none' : 'invert(0)' }} />
+                <span style={{ fontSize: '1.5rem', fontWeight: '900', letterSpacing: '0.15em', fontFamily: 'var(--font-heading)', textTransform: 'uppercase' }}>Z-TABOR</span>
             </Link>
 
             <nav className="nav-links">

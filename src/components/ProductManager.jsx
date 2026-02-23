@@ -31,7 +31,7 @@ const ProductManager = ({ isDarkMode }) => {
         }
 
         // 3. Last resort fallback
-        if (!origin) return `https://your-domain.com/product/${productId}`;
+        if (!origin) return `https://www.z-tabor.com/product/${productId}`;
 
         // Cleanup: remove trailing slashes
         const normalizedOrigin = origin.replace(/\/+$/, "");

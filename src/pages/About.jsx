@@ -10,8 +10,8 @@ const About = () => {
     return (
         <div className="about-page-wrapper">
             <SEO
-                title="About Us - Z Tabor Trading"
-                description="Learn about Z Tabor Trading P.L.C., Ethiopia's leading partner in solar energy solutions and international trade."
+                title="About Us - Z-Tabor Solar"
+                description="Learn about Z-Tabor Solar, Ethiopia's leading partner in renewable energy solutions and sustainable technological impact."
             />
 
             <style>{`

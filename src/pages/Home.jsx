@@ -76,7 +76,7 @@ const Home = () => {
     return (
         <div className="home-wrapper">
             <SEO
-                title="Z Tabor Trading - Premium Sustainable Energy"
+                title="Z-Tabor Solar | Renewable Energy"
                 description="Engineered for high performance, sustainability, and industrial reliability."
             />
 

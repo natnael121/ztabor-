@@ -1,24 +1,22 @@
 import { useEffect } from 'react';
 
 const SEO = ({ title, description, keywords, image, url }) => {
-    const siteName = "Tabor Solar";
+    const siteName = "Z-Tabor Solar";
 
     const fullTitle = title
         ? `${title} | ${siteName}`
-        : `${siteName} - Sustainable Energy Solutions`;
+        : `${siteName} - Renewable Energy Solutions`;
 
     const defaultDescription =
-        "Empower your grid with Tabor Solar. Discover next-generation solar solutions, from portable kits to industrial energy storage systems.";
+        "Z-Tabor Solar provides advanced renewable energy solutions, from high-efficiency solar panels to intelligent energy storage systems. Powering Ethiopia sustainably.";
     const metaDescription = description || defaultDescription;
 
     const metaKeywords =
         keywords ||
-        "Tabor Solar, solar energy, sustainable power, portable solar, energy storage, industrial solar, clean energy Ethiopia";
+        "Z-Tabor Solar, solar panels, renewable energy, portable power, energy storage, clean energy Ethiopia, sustainable technology";
 
-    // ✅ YOUR IMAGE ADDED HERE
-    const metaImage =
-        image ||
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxxtFeeMi-YSz1U9J5rpgMz7gaNdNbvaSKGO9oMtNmjw&s=10";
+    // Update with new OG image if available, else default
+    const metaImage = image || "https://www.z-tabor.com/logo-og.png";
 
     useEffect(() => {
         // Update document title

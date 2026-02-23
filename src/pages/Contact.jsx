@@ -18,8 +18,8 @@ const Contact = () => {
     return (
         <div className="contact-page-wrapper">
             <SEO
-                title="Contact - Tabor Solar"
-                description="Get in touch with Tabor Solar for consultations, support, and inquiries."
+                title="Contact - Z-Tabor Solar"
+                description="Get in touch with Z-Tabor Solar for consultations, energy audits, and technical support."
             />
 
             <style>{`
