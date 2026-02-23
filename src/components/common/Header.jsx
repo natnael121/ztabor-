@@ -74,7 +74,7 @@ const Header = ({ theme, toggleTheme }) => {
                 }
 
                 @media (max-width: 1024px) {
-                    .nav - links {display: none; }
+                    .nav-links { display: none !important; }
                 }
             `}</style>
 

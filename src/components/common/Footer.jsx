@@ -66,16 +66,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Legal */}
-                    <div>
-                        <h4 style={{ color: 'var(--color-text)', marginBottom: '1.5rem', fontSize: '1rem' }}>Resources</h4>
-                        <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <li><a href="#" style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>Documentation</a></li>
-                            <li><a href="#" style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>Privacy Policy</a></li>
-                            <li><a href="#" style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>Terms of Service</a></li>
-                            <li><a href="#" style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>Cookie Usage</a></li>
-                        </ul>
-                    </div>
 
                     {/* Newsletter */}
                     <div>
