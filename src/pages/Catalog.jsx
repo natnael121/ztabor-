@@ -32,7 +32,7 @@ const Catalog = () => {
 
             <style>{`
                 .catalog-hero {
-                    padding: 10rem 0 6rem;
+                    padding: 6rem 0 4rem;
                     text-align: center;
                     position: relative;
                     background: radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.05) 0%, transparent 70%);
@@ -59,9 +59,18 @@ const Catalog = () => {
 
                 .product-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                     gap: 2.5rem;
-                    padding-bottom: 8rem;
+                    padding-bottom: 6rem;
+                }
+
+                @media (max-width: 640px) {
+                    .product-grid {
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                    }
+                    .catalog-hero { padding: 4rem 1rem 3rem; }
+                    .catalog-title { font-size: 3rem; }
                 }
 
                 .product-card {

@@ -12,6 +12,7 @@ import Blog from './pages/Blog';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import AnalyticsService from './services/analytics';
+import BottomNav from './components/common/BottomNav';
 
 const AppLayout = ({ children }) => {
   const location = useLocation();
@@ -39,10 +40,12 @@ const AppLayout = ({ children }) => {
       {!isAdminPath && <Header theme={theme} toggleTheme={toggleTheme} />}
       <main style={{
         minHeight: '100vh',
-        paddingTop: (!isAdminPath && location.pathname !== '/') ? '90px' : '0'
+        paddingTop: (!isAdminPath && location.pathname !== '/') ? '90px' : '0',
+        paddingBottom: !isAdminPath ? '70px' : '0' // Space for BottomNav on mobile
       }}>
         {children}
       </main>
+      {!isAdminPath && <BottomNav />}
       <Footer />
     </div>
   );

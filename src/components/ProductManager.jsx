@@ -461,8 +461,18 @@ const ProductManager = ({ isDarkMode }) => {
                 padding: '2.5rem',
                 border: `1px solid ${theme.border}`,
                 boxShadow: '0 4px 6px rgba(0,0,0,0.04)'
-            }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+            }} className="manager-form-card">
+                <style>{`
+                    @media (max-width: 768px) {
+                        .manager-form-card { padding: 1.5rem !important; }
+                        .form-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+                        .manager-header { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; }
+                        .product-list-card { padding: 1.5rem !important; }
+                        .product-item { flex-direction: column; align-items: flex-start !important; }
+                        .product-actions { width: 100%; justify-content: space-between; margin-top: 1rem; }
+                    }
+                `}</style>
+                <div className="manager-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                     <h3 style={{
                         fontSize: '1.3rem',
                         fontWeight: '800',
@@ -507,7 +517,7 @@ const ProductManager = ({ isDarkMode }) => {
                         <h4 style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.25rem', paddingBottom: '0.5rem', borderBottom: `1px solid ${theme.border}` }}>
                             Product Classification
                         </h4>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                        <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <label style={labelStyle}>Product Name *</label>
                                 <input type="text" required value={name} onChange={(e) => setName(e.target.value)}
@@ -541,7 +551,7 @@ const ProductManager = ({ isDarkMode }) => {
                         <h4 style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.25rem', paddingBottom: '0.5rem', borderBottom: `1px solid ${theme.border}` }}>
                             Commercial Details
                         </h4>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                        <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <label style={labelStyle}>Manufacturer/Origin</label>
                                 <input type="text" value={hometown} onChange={(e) => setHometown(e.target.value)}
@@ -661,7 +671,7 @@ const ProductManager = ({ isDarkMode }) => {
                                 borderRadius: '0.75rem',
                                 border: `1px solid ${theme.border}`,
                             }}>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '1rem', marginBottom: '1rem' }}>
+                                <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '1rem', marginBottom: '1rem' }}>
                                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                                         <label style={labelStyle}>Year</label>
                                         <input type="text" value={tlYear} onChange={(e) => setTlYear(e.target.value)}
@@ -734,7 +744,7 @@ const ProductManager = ({ isDarkMode }) => {
             </div>
 
             {/* Product List Card */}
-            <div style={{
+            <div className="product-list-card" style={{
                 backgroundColor: theme.bg,
                 borderRadius: '1rem',
                 padding: '2.5rem',
@@ -742,7 +752,7 @@ const ProductManager = ({ isDarkMode }) => {
                 border: `1px solid ${theme.border}`,
                 boxShadow: '0 4px 6px rgba(0,0,0,0.04)'
             }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                <div className="manager-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                     <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: theme.text, display: 'flex', alignItems: 'center', gap: '0.75rem', margin: 0 }}>
                         <FaMedal style={{ color: 'var(--color-primary)' }} /> Product Catalog ({products.length})
                     </h3>
@@ -767,7 +777,7 @@ const ProductManager = ({ isDarkMode }) => {
                         <p style={{ color: theme.textMuted, fontStyle: 'italic', textAlign: 'center', padding: '2rem 0' }}>No products in the catalog yet. Add one above!</p>
                     ) : (
                         products.map(prod => (
-                            <div key={prod.id} style={{
+                            <div key={prod.id} className="product-item" style={{
                                 display: 'flex', flexWrap: 'wrap', gap: '1.25rem',
                                 padding: '1.25rem',
                                 border: `1px solid ${theme.border}`,
@@ -793,7 +803,7 @@ const ProductManager = ({ isDarkMode }) => {
                                         </div>
                                     )}
                                 </div>
-                                <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
+                                <div className="product-actions" style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
                                     <button onClick={() => setQrOpenId(qrOpenId === prod.id ? null : prod.id)} style={{
                                         color: '#8B5CF6', display: 'flex', alignItems: 'center', gap: '0.4rem',
                                         fontSize: '0.8rem', fontWeight: '600', padding: '0.5rem 0.75rem', borderRadius: '0.5rem',

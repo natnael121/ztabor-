@@ -23,8 +23,7 @@ const About = () => {
                 }
 
                 .about-header {
-                    height: 50vh;
-                    min-height: 400px;
+                    min-height: 350px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -32,7 +31,7 @@ const About = () => {
                     background: radial-gradient(circle at 50% 50%, var(--color-primary-glow) 0%, var(--color-bg) 80%);
                     position: relative;
                     text-align: center;
-                    padding: 0 2rem;
+                    padding: 4rem 1.5rem;
                 }
 
                 .about-header h1 {
@@ -55,7 +54,7 @@ const About = () => {
                 .section-container {
                     max-width: 1200px;
                     margin: 0 auto;
-                    padding: 8rem 2rem;
+                    padding: 6rem 1.5rem;
                 }
 
                 .intro-grid {
@@ -100,7 +99,7 @@ const About = () => {
                 .glass-v-card {
                     background: rgba(255, 255, 255, 0.03);
                     border: 1px solid rgba(255, 255, 255, 0.05);
-                    padding: 4rem;
+                    padding: 2.5rem;
                     border-radius: 32px;
                     transition: all 0.4s ease;
                     position: relative;
@@ -135,7 +134,7 @@ const About = () => {
 
                 .value-item {
                     background: var(--color-surface);
-                    padding: 3rem;
+                    padding: 2.5rem 1.5rem;
                     border-radius: 24px;
                     border: 1px solid var(--color-border);
                     transition: all 0.3s ease;
@@ -189,7 +188,7 @@ const About = () => {
 
                 .founder-section {
                     background: var(--color-surface);
-                    padding: 10rem 2rem;
+                    padding: 6rem 1rem;
                 }
 
                 .founder-grid {
@@ -204,7 +203,7 @@ const About = () => {
                     background: var(--color-bg);
                     border: 1px solid var(--color-border);
                     border-radius: 32px;
-                    padding: 4rem;
+                    padding: 2.5rem;
                     transition: all 0.4s ease;
                 }
 
@@ -250,13 +249,19 @@ const About = () => {
                 }
 
                 @media (max-width: 1024px) {
-                    .intro-grid, .v-m-grid, .founder-grid { grid-template-columns: 1fr; gap: 4rem; }
-                    .glass-v-card { padding: 3rem; }
+                    .intro-grid { gap: 3rem; }
+                    .founder-grid { gap: 2rem; }
                 }
 
                 @media (max-width: 768px) {
-                    .section-container { padding: 4rem 2rem; }
-                    .about-header { height: 60vh; }
+                    .intro-grid, .v-m-grid, .founder-grid { grid-template-columns: 1fr; gap: 3rem; }
+                    .about-header h1 { font-size: 3rem; }
+                    .section-container { padding: 4rem 1.25rem; }
+                    .content-title { font-size: 2.2rem; }
+                    .glass-v-card { padding: 2rem; }
+                    .founder-section { padding: 4rem 0.75rem; }
+                    .founder-card { padding: 1.5rem; }
+                    .founder-name { font-size: 1.75rem; }
                 }
             `}</style>
 

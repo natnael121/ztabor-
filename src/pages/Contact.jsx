@@ -59,7 +59,7 @@ const Contact = () => {
                     gap: 4rem;
                     max-width: 1200px;
                     margin: 0 auto;
-                    padding: 4rem 2rem;
+                    padding: 4rem 1.5rem;
                     align-items: start;
                 }
 
@@ -95,7 +95,7 @@ const Contact = () => {
 
                 .booking-card {
                     background: var(--color-surface); 
-                    padding: 3rem;
+                    padding: 2.5rem;
                     border-radius: 20px;
                     border: 1px solid var(--color-border);
                     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
@@ -151,7 +151,7 @@ const Contact = () => {
                     gap: 2rem;
                     max-width: 1200px;
                     margin: 0 auto;
-                    padding: 4rem 2rem 6rem;
+                    padding: 4rem 1.5rem 6rem;
                 }
 
                 .support-card {
@@ -195,11 +195,17 @@ const Contact = () => {
                     margin-top: 1.5rem;
                 }
 
-                @media (max-width: 900px) {
-                    .split-container { grid-template-columns: 1fr; padding: 2rem; }
+                @media (max-width: 1024px) {
+                    .split-container { gap: 3rem; }
+                }
+
+                @media (max-width: 768px) {
+                    .split-container { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+                    .get-in-touch { padding-right: 0; }
+                    .booking-card { padding: 1.5rem; }
                     .booking-form { grid-template-columns: 1fr; }
                     .full-width { grid-column: span 1; }
-                    .support-cards-grid { grid-template-columns: 1fr; }
+                    .support-cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
                 }
             `}</style>
 

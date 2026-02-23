@@ -79,7 +79,6 @@ const Blog = () => {
                 }
 
                 .news-header {
-                    height: 40vh;
                     min-height: 250px;
                     display: flex;
                     flex-direction: column;
@@ -88,6 +87,7 @@ const Blog = () => {
                     background: radial-gradient(circle at 50% 0%, var(--color-primary-glow) 0%, var(--color-bg) 80%);
                     text-align: center;
                     position: relative;
+                    padding: 4rem 1.5rem 2rem;
                 }
 
                 .news-header h1 {
@@ -104,7 +104,7 @@ const Blog = () => {
                 }
 
                 .featured-section {
-                    padding: 4rem 2rem;
+                    padding: 4rem 1.5rem;
                     max-width: 1200px;
                     margin: 0 auto;
                 }
@@ -129,14 +129,14 @@ const Blog = () => {
                 .featured-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
                 .featured-content {
-                    padding: 3rem;
+                    padding: 2.5rem;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                 }
 
                 .grid-section {
-                    padding: 0 2rem 6rem;
+                    padding: 0 1.5rem 6rem;
                     max-width: 1200px;
                     margin: 0 auto;
                 }
@@ -241,9 +241,17 @@ const Blog = () => {
                     cursor: pointer;
                 }
 
-                @media (max-width: 900px) {
+                @media (max-width: 1024px) {
                     .featured-card { grid-template-columns: 1fr; }
-                    .featured-img-wrap { min-height: 250px; }
+                    .featured-img-wrap { min-height: 300px; }
+                    .featured-content { padding: 2rem; }
+                }
+
+                @media (max-width: 768px) {
+                    .news-header h1 { font-size: 2.5rem; }
+                    .featured-section { padding: 2rem 1.25rem; }
+                    .grid-section { padding: 0 1.25rem 4rem; }
+                    .newsletter-section { padding: 4rem 1.25rem; }
                     .newsletter-input-group { flex-direction: column; }
                 }
             `}</style>

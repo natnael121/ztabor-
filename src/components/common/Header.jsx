@@ -22,8 +22,14 @@ const Header = ({ theme, toggleTheme }) => {
             left: 0,
             right: 0,
             backgroundColor: 'transparent'
-        }}>
+        }} className="main-header">
             <style>{`
+                @media (max-width: 768px) {
+                    .main-header { padding: 1rem 1.25rem !important; }
+                    .main-header img { height: 35px !important; }
+                    .main-header span { font-size: 1.2rem !important; }
+                }
+
                 .nav-links {
                     display: flex;
                     align-items: center;
@@ -34,41 +40,41 @@ const Header = ({ theme, toggleTheme }) => {
                     letter-spacing: 0.15em;
                     color: var(--color-text-muted);
                 }
-                .nav-links a { 
-                    color: inherit; 
-                    text-decoration: none; 
-                    transition: all 0.3s ease;
-                    position: relative;
-                    padding-bottom: 4px;
+                .nav-links a {
+                    color: inherit;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                position: relative;
+                padding-bottom: 4px;
                 }
-                .nav-links a:hover { color: var(--color-primary); }
-                .nav-links a.active { 
-                    color: var(--color-primary); 
-                    border-bottom: 2px solid var(--color-primary);
+                .nav-links a:hover {color: var(--color-primary); }
+                .nav-links a.active {
+                    color: var(--color-primary);
+                border-bottom: 2px solid var(--color-primary);
                 }
 
                 .theme-toggle {
                     background: var(--color-surface);
-                    border: 1px solid var(--color-border);
-                    color: var(--color-text);
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    font-size: 1.1rem;
+                border: 1px solid var(--color-border);
+                color: var(--color-text);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-size: 1.1rem;
                 }
                 .theme-toggle:hover {
                     background: var(--color-primary);
-                    color: white;
-                    border-color: var(--color-primary);
+                color: white;
+                border-color: var(--color-primary);
                 }
 
                 @media (max-width: 1024px) {
-                    .nav-links { display: none; }
+                    .nav - links {display: none; }
                 }
             `}</style>
 

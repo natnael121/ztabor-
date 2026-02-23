@@ -27,7 +27,13 @@ const BottomNav = () => {
             borderTop: '1px solid rgba(255,255,255,0.08)',
             padding: '0.5rem 0.75rem',
             paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))',
-        }}>
+        }} className="bottom-nav-mobile">
+            <style>{`
+                @media (min-width: 1025px) {
+                    .bottom-nav-mobile { display: none !important; }
+                }
+            `}</style>
+
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-around',

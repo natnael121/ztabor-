@@ -51,9 +51,23 @@ const Login = () => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="card"
-                style={{ width: '100%', maxWidth: '400px', padding: '3rem' }}
+                className="login-card"
+                style={{
+                    width: '100%',
+                    maxWidth: '400px',
+                    padding: '3rem',
+                    backgroundColor: 'var(--color-surface)',
+                    borderRadius: '24px',
+                    border: '1px solid var(--color-border)',
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                }}
             >
+                <style>{`
+                    @media (max-width: 640px) {
+                        .login-card { padding: 2rem 1.5rem !important; }
+                    }
+                `}</style>
+
                 <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                     <h2 className="heading-sm">Admin Access</h2>
                     <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>Enter your credentials to manage the site</p>

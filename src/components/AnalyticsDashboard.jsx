@@ -378,7 +378,21 @@ const AnalyticsDashboard = ({ isDarkMode, timeRange = '24h' }) => {
     }
 
     return (
-        <div style={{ display: 'grid', gap: '2rem', padding: '1rem' }}>
+        <div style={{ display: 'grid', gap: '2rem', padding: '1rem' }} className="analytics-container">
+            <style>{`
+                @media (max-width: 1024px) {
+                    .analytics-container { padding: 0.5rem !important; }
+                    .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+                    .dashboard-layout { grid-template-columns: 1fr !important; }
+                }
+
+                @media (max-width: 640px) {
+                    .stats-grid { grid-template-columns: 1fr !important; }
+                    .metric-tabs { gap: 0.5rem !important; }
+                    .metric-tabs button { padding: 0.4rem 0.75rem !important; font-size: 0.8rem !important; }
+                }
+            `}</style>
+
             {/* Metric Selection Tabs */}
             <div style={{
                 display: 'flex',
@@ -388,7 +402,7 @@ const AnalyticsDashboard = ({ isDarkMode, timeRange = '24h' }) => {
                 borderRadius: '12px',
                 border: `1px solid ${theme.border}`,
                 overflowX: 'auto'
-            }}>
+            }} className="metric-tabs">
                 {['realtime', 'geography', 'technology', 'performance'].map(metric => (
                     <button
                         key={metric}
@@ -415,7 +429,7 @@ const AnalyticsDashboard = ({ isDarkMode, timeRange = '24h' }) => {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                 gap: '1.5rem'
-            }}>
+            }} className="stats-grid">
                 <MetricCard
                     icon={<FaEye />}
                     label="Total Visits"
@@ -543,7 +557,7 @@ const AnalyticsDashboard = ({ isDarkMode, timeRange = '24h' }) => {
                 display: 'grid',
                 gridTemplateColumns: selectedMetric === 'realtime' ? '2fr 1fr' : '1fr 1fr',
                 gap: '1.5rem'
-            }}>
+            }} className="dashboard-layout">
 
                 {/* Recent Visitors Table */}
                 <div style={{

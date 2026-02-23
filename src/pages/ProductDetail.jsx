@@ -99,6 +99,10 @@ const ProductDetail = () => {
                     align-items: center;
                 }
 
+                @media (max-width: 1400px) {
+                    .main-layout { padding: 0 2rem; gap: 2rem; grid-template-columns: 80px 1fr 400px; }
+                }
+
                 .sidebar-thumbnails {
                     display: flex;
                     flex-direction: column;
@@ -215,9 +219,10 @@ const ProductDetail = () => {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 3rem 4rem;
+                    padding: 2rem 4rem;
                     border-top: 1px solid var(--color-border);
                     background: var(--color-surface);
+                    z-index: 10;
                 }
 
                 .nav-pagination {
@@ -247,7 +252,7 @@ const ProductDetail = () => {
                 }
 
                 .spec-section {
-                    padding: 10rem 4rem;
+                    padding: 8rem 4rem;
                     background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
                 }
 
@@ -345,16 +350,26 @@ const ProductDetail = () => {
                 }
 
                 @media (max-width: 1024px) {
-                    .main-layout { grid-template-columns: 1fr; height: auto; padding: 6rem 2rem; }
-                    .sidebar-thumbnails { flex-direction: row; justify-content: center; }
+                    .main-layout { grid-template-columns: 1fr; height: auto; padding: 4rem 2rem; text-align: center; }
+                    .sidebar-thumbnails { flex-direction: row; justify-content: center; order: 2; }
+                    .hero-image-container { order: 1; max-width: 400px; }
+                    .product-info { padding-left: 0; order: 3; align-items: center; }
+                    .product-desc { margin: 0 auto; }
                     .spec-grid { grid-template-columns: 1fr; gap: 4rem; }
                     .product-title { font-size: 3rem; }
-                    .bottom-nav { padding: 2rem; }
+                    .bottom-nav { padding: 2rem; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+                    .spec-section { padding: 4rem 1.5rem; }
+                }
+
+                @media (max-width: 640px) {
+                    .main-layout { padding: 3rem 1.25rem; }
+                    .feature-cards { grid-template-columns: 1fr; }
+                    .spec-table td.value { font-size: 0.95rem; }
                 }
             `}</style>
 
-            <div style={{ padding: '2rem 4rem' }}>
-                <Link to="/catalog" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem', opacity: 0.4, fontSize: '0.75rem', fontWeight: '800', letterSpacing: '0.1em' }}>
+            <div style={{ padding: '1rem' }}>
+                <Link to="/catalog" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem', opacity: 0.4, fontSize: '0.65rem', fontWeight: '800', letterSpacing: '0.1em' }}>
                     <FaChevronLeft size={10} /> BACK TO CATALOG
                 </Link>
             </div>

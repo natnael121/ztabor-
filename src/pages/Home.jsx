@@ -105,9 +105,9 @@ const Home = () => {
                 }
 
                 .hero-section {
-                    height: 100vh;
+                    min-height: 100vh;
                     display: grid;
-                    grid-template-columns: 45% 55%;
+                    grid-template-columns: 48% 52%;
                     padding: 0 6rem;
                     align-items: center;
                     position: relative;
@@ -172,7 +172,7 @@ const Home = () => {
                     align-items: center;
                     height: 100%;
                     width: 100%;
-                    padding: 4rem;
+                    padding: 2rem;
                     box-sizing: border-box;
                 }
 
@@ -224,8 +224,8 @@ const Home = () => {
                 .product-card-nav.active {
                     background: rgba(34, 197, 94, 0.1);
                     border-color: var(--color-primary);
-                    transform: translateY(-10px);
-                    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
                 }
 
                 .product-card-nav.active::after {
@@ -267,9 +267,13 @@ const Home = () => {
                 }
 
                 .cy-section {
-                    padding: 12rem 6rem;
+                    padding: 8rem 2rem;
                     position: relative;
                     z-index: 2;
+                }
+
+                @media (max-width: 768px) {
+                    .cy-section { padding: 4rem 1.5rem; }
                 }
 
                 .glass-card {
@@ -424,12 +428,62 @@ const Home = () => {
                     50% { transform: translateY(-5px); }
                 }
 
+                @media (max-width: 1400px) {
+                    .hero-section { padding: 0 3rem; }
+                    .brand-sidebar { padding-right: 2rem; }
+                    .bottom-selection-bar { padding: 0 3rem 2rem; }
+                }
+
                 @media (max-width: 1024px) {
-                    .hero-section { grid-template-columns: 1fr; padding: 6rem 2rem; gap: 2rem; height: auto; min-height: 100vh; }
-                    .brand-sidebar { border: none; padding-right: 0; text-align: center; align-items: center; height: auto; }
-                    .bottom-selection-bar { padding: 0 1rem; overflow-x: auto; height: 110px; position: relative; bottom: auto; }
+                    .hero-section { 
+                        grid-template-columns: 1fr; 
+                        padding: 8rem 2rem 4rem; 
+                        gap: 3rem; 
+                        height: auto; 
+                        min-height: 100vh;
+                        text-align: center;
+                    }
+                    .brand-sidebar { 
+                        border: none; 
+                        padding-right: 0; 
+                        text-align: center; 
+                        align-items: center; 
+                        height: auto; 
+                        margin-bottom: 2rem;
+                    }
+                    .product-description {
+                        margin: 0 auto;
+                    }
+                    .cta-btn {
+                        margin: 0 auto;
+                    }
+                    .bottom-selection-bar { 
+                        padding: 0 1.5rem 2rem; 
+                        overflow-x: auto; 
+                        height: auto; 
+                        position: relative; 
+                        bottom: auto; 
+                        justify-content: center;
+                    }
+                    .product-display {
+                        padding: 0;
+                        height: 400px;
+                    }
                     .bg-split { display: none; }
                     .home-wrapper { height: auto; overflow-y: visible; }
+                    .cy-section div[style*="grid-template-columns"] {
+                        grid-template-columns: 1fr !important;
+                        gap: 3rem !important;
+                    }
+                    .cta-banner { padding: 3rem; flex-direction: column; text-align: center; gap: 2rem; }
+                }
+
+                @media (max-width: 640px) {
+                    .hero-section { padding: 6rem 1.25rem 3rem; }
+                    .product-title { font-size: 3.5rem; }
+                    .glass-card { padding: 2rem 1.5rem; }
+                    .solutions-grid { grid-template-columns: 1fr; }
+                    .step-card { flex-direction: column; text-align: center; padding: 1.5rem; }
                 }
 
             `}</style>

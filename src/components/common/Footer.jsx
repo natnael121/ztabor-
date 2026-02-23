@@ -6,28 +6,40 @@ import logoImg from '../../assets/photo_5784881328204484076_x.jpg';
 const Footer = () => {
     return (
         <footer style={{
-            backgroundColor: 'var(--color-bg)',
+            backgroundColor: 'var(--color-surface)',
+            color: 'var(--color-text)',
+            padding: '6rem 4rem 4rem',
             borderTop: '1px solid var(--color-border)',
-            padding: '4rem 2rem 2rem',
-            marginTop: 'auto'
-        }}>
+            position: 'relative',
+            zIndex: 10
+        }} className="main-footer">
+            <style>{`
+                @media (max-width: 768px) {
+                    .main-footer { padding: 4rem 1.5rem 6rem !important; }
+                    .footer-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+                    .footer-brand-section { text-align: center; align-items: center; }
+                    .footer-brand-section .brand-link { justify-content: center; }
+                    .footer-brand-section .social-links { justify-content: center; }
+                }
+            `}</style>
+
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                <div style={{
+                <div className="footer-grid" style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                     gap: '4rem',
                     marginBottom: '4rem'
                 }}>
                     {/* Brand Section */}
-                    <div>
-                        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem', textDecoration: 'none', color: 'var(--color-text)' }}>
+                    <div className="footer-brand-section">
+                        <Link to="/" className="brand-link" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem', textDecoration: 'none', color: 'var(--color-text)' }}>
                             <img src={logoImg} alt="Tabor Solar" style={{ height: '35px' }} />
                             <span style={{ fontSize: '1.1rem', fontWeight: '800', fontFamily: 'var(--font-heading)', textTransform: 'uppercase' }}>TABOR</span>
                         </Link>
                         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                             Leading the way in renewable energy, construction materials, and global agricultural trade in Ethiopia.
                         </p>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
                             {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn].map((Icon, i) => (
                                 <a key={i} href="#" style={{
                                     width: '35px', height: '35px',
@@ -71,7 +83,7 @@ const Footer = () => {
                         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem', marginBottom: '1rem' }}>
                             Get the latest updates on solar technology and grid innovations.
                         </p>
-                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <div className="footer-brand" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                             <input type="email" placeholder="Email address" style={{
                                 background: 'var(--color-surface)',
                                 border: '1px solid var(--color-border)',

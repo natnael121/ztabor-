@@ -85,10 +85,24 @@ button {
 /* Layout Utilities */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 
 .section {
   padding: 5rem 0;
