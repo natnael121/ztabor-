@@ -145,16 +145,23 @@ const ProductDetail = () => {
                     width: 100%;
                     max-width: 650px;
                     margin: 0 auto;
-                    aspect-ratio: 1/1;
+                    height: 350px; /* Fallback height for mobile */
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     background: radial-gradient(circle at center, rgba(34, 197, 94, 0.05) 0%, transparent 70%);
                 }
 
+                @media (min-width: 1025px) {
+                    .hero-image-container {
+                        height: auto;
+                        aspect-ratio: 1/1;
+                    }
+                }
+
                 .hero-image-container img {
-                    width: 100%;
-                    height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
                     object-fit: contain;
                     filter: drop-shadow(0 30px 80px rgba(0,0,0,0.8));
                 }

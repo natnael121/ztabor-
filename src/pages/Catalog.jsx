@@ -94,21 +94,29 @@ const Catalog = () => {
 
                 .product-card-image {
                     width: 100%;
-                    aspect-ratio: 1/1;
-                    background: rgba(0,0,0,0.2);
+                    background: rgba(255,255,255,0.03);
                     border-radius: 16px;
-                    margin-bottom: 2rem;
+                    margin-bottom: 1.5rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     overflow: hidden;
+                    position: relative;
+                    height: 250px; /* Fixed height for better mobile stability */
+                }
+
+                @media (min-width: 641px) {
+                    .product-card-image {
+                        height: auto;
+                        aspect-ratio: 1/1;
+                    }
                 }
 
                 .product-card-image img {
-                    width: 85%;
-                    height: 85%;
+                    max-width: 90%;
+                    max-height: 90%;
                     object-fit: contain;
-                    transition: transform 0.6s ease;
+                    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
                 }
 
                 .product-card:hover .product-card-image img {
